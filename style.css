@@ -1,0 +1,204 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: #0b5ed7;
+  color: white;
+  padding: 10px 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+header p {
+  margin: 2px 0 0;
+  font-size: 13px;
+}
+
+.layout {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.sidebar {
+  width: 320px;
+  padding: 14px;
+  background: #f4f6f9;
+  border-right: 1px solid #ccc;
+  overflow-y: auto;
+}
+
+.sidebar h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.sidebar label {
+  display: block;
+  margin: 10px 0 4px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.sidebar input[type="text"],
+.sidebar select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.sidebar label.check {
+  font-weight: normal;
+  font-size: 14px;
+}
+
+#resetBtn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 9px;
+  background: #0b5ed7;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#resetBtn:hover {
+  background: #094db0;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 14px 0 6px;
+  font-size: 12px;
+}
+
+.dot {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+.dot.hospital { background: #dc3545; }
+.dot.clinic { background: #198754; }
+.dot.center { background: #fd7e14; }
+
+.count {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 10px 0 6px;
+}
+
+#facilityList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#facilityList li {
+  padding: 8px;
+  margin-bottom: 6px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+#facilityList li:hover {
+  background: #e8f0fe;
+}
+
+#facilityList li small {
+  color: #666;
+}
+
+#map {
+  flex: 1;
+  height: 100%;
+}
+
+@media (max-width: 700px) {
+  .layout { flex-direction: column; }
+  .sidebar { width: 100%; max-height: 40vh; }
+}
+hr {
+  margin: 16px 0;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+.sidebar input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+#saveBtn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 9px;
+  background: #198754;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#saveBtn:hover {
+  background: #146c43;
+}
+
+#cancelBtn.secondary {
+  width: 100%;
+  margin-top: 8px;
+  padding: 9px;
+  background: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.hint {
+  font-size: 12px;
+  color: #555;
+  margin: 6px 0;
+}
+
+.message {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.message.error {
+  color: #b02a37;
+}
+
+.message.success {
+  color: #146c43;
+  font-weight: bold;
+}

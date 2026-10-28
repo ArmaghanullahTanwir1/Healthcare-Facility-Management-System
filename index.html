@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healthcare Facilities - Rawalpindi & Islamabad</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Healthcare Facility Management System</h1>
+    <p>Rawalpindi & Islamabad</p>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Search & Filter</h2>
+
+      <label for="searchInput">Search by name</label>
+      <input type="text" id="searchInput" placeholder="e.g. Shifa">
+
+      <label for="typeSelect">Facility type</label>
+      <select id="typeSelect">
+        <option value="">All types</option>
+        <option value="Hospital">Hospital</option>
+        <option value="Clinic">Clinic</option>
+        <option value="Health Center">Health Center</option>
+      </select>
+
+      <label for="districtSelect">District</label>
+      <select id="districtSelect">
+        <option value="">All districts</option>
+        <option value="Rawalpindi">Rawalpindi</option>
+        <option value="Islamabad">Islamabad</option>
+      </select>
+
+      <label class="check">
+        <input type="checkbox" id="emergencyCheck"> Emergency unit only
+      </label>
+
+      <button id="resetBtn" type="button">Reset filters</button>
+
+      <div class="legend">
+        <span><i class="dot hospital"></i> Hospital</span>
+        <span><i class="dot clinic"></i> Clinic</span>
+        <span><i class="dot center"></i> Health Center</span>
+      </div>
+
+            <hr>
+
+      <h2 id="formTitle">Add New Facility</h2>
+
+      <form id="facilityForm" novalidate>
+        <input type="hidden" id="facilityId">
+
+        <label for="fName">Name *</label>
+        <input type="text" id="fName" maxlength="150">
+
+        <label for="fType">Type *</label>
+        <select id="fType">
+          <option value="">Choose type</option>
+          <option value="Hospital">Hospital</option>
+          <option value="Clinic">Clinic</option>
+          <option value="Health Center">Health Center</option>
+        </select>
+
+        <label for="fDistrict">District *</label>
+        <select id="fDistrict">
+          <option value="">Choose district</option>
+          <option value="Rawalpindi">Rawalpindi</option>
+          <option value="Islamabad">Islamabad</option>
+        </select>
+
+        <label for="fAddress">Address</label>
+        <input type="text" id="fAddress" maxlength="300">
+
+        <label for="fPhone">Phone</label>
+        <input type="text" id="fPhone" maxlength="30">
+
+        <label for="fBeds">Beds</label>
+        <input type="number" id="fBeds" min="0" max="5000">
+
+        <label class="check">
+          <input type="checkbox" id="fEmergency"> Has emergency unit
+        </label>
+
+        <label for="fLat">Latitude * (33.4 to 33.9)</label>
+        <input type="text" id="fLat" placeholder="e.g. 33.6407">
+
+        <label for="fLng">Longitude * (72.8 to 73.4)</label>
+        <input type="text" id="fLng" placeholder="e.g. 73.0668">
+
+        <p class="hint">Tip: click on the map to fill latitude and longitude.</p>
+
+        <div id="formMessage" class="message"></div>
+
+        <button type="submit" id="saveBtn">Save facility</button>
+        <button type="button" id="cancelBtn" class="secondary">Clear form</button>
+      </form>
+
+      <hr>
+      <p id="countText" class="count">Loading...</p>
+      <ul id="facilityList"></ul>
+    </aside>
+
+    <div id="map"></div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
